@@ -8,7 +8,22 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, num) =>{
+
+  if(isNaN(num)){
+    let arr = [];
+    dates.forEach(el => {
+      let dateCheck = new Date(el);
+      arr.push(Math.round(dateCheck.getTime()/1000));
+    });
+
+    return arr.sort().join('-');
+  }else{
+    let dateCheck = new Date(dates[num]);
+    return Math.round(dateCheck.getTime()/1000).toString();
+  }
+
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
